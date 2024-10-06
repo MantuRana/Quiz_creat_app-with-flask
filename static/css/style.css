@@ -1,0 +1,93 @@
+ /* Reset some basic styling */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(65, 29, 29, 0.2), rgba(169, 162, 162, 0.5)),
+    url(https://img.freepik.com/premium-vector/comic-speech-bubbles-with-text-quiz-night-neon-icon-symbol-sticker-tag-special-offer-label_100456-7641.jpg?w=1060);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+/* Main container styling */
+.upload-container {
+    background-color:transparent;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    animation-name: border;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes border{
+    10%{
+        box-shadow: 0px 0px 4px 4px rgba(235, 247, 13, 0.5);
+    }
+    40%{
+        box-shadow: 0px 0px 4px 4px rgba(204, 205, 197);
+    }
+    60%{
+        box-shadow: 0px 0px 4px 4px rgba(236, 248, 25);
+    }
+    
+    
+    }
+span{
+    color: red;
+}
+/* Header styling */
+h1 {
+    font-size:40px;
+    color: #f6faf7;
+    margin-bottom: 20px;
+    text-shadow:0px 10px 5px  #0e1114;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+/* Input file styling */
+input[type="file"] {
+    padding: 10px;
+    border: 2px solid #0c0707;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: red;
+    font-size: 1em;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3afe04;
+}
+
+@media(max-width:768px){
+
+    .upload-container{
+        width:350px;
+    }
+}

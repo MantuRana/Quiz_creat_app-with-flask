@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css')}}">
+
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>{{ qa.Question }}</h1>
+        <p>{{ qa.Options }}</p>
+
+        {% if feedback %}
+            <p class="feedback {% if 'Correct' in feedback %}correct{% else %}wrong{% endif %}">
+                <strong>{{ feedback }}</strong>
+            </p>
+        {% endif %}
+
+        <form id="quizForm" action="/quiz/{{ question_num }}" method="post">
+            <label for="answer">Your answer (A/B/C/D)👨‍💻:</label>
+            <input type="text" name="answer" id="answer" required>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+        <br>
+<section>
+        <div class="timer">
+            Time remaining: <span id="time">20</span> seconds
+        </div>
+
+        <div class="result">
+            <p>Correct answers: {{ session['correct'] }}</p>
+            <p>Wrong answers: {{ session['wrong'] }}</p>
+        </div>
+    </section>
+
+        {% if feedback %}
+            <a href="/quiz/{{ question_num + 1 }}">👉Next Question</a>
+        {% endif %}
+    </div>
+
+    <script>
+        // Timer script
+        let timeLeft = 20; 
+        const timerElement = document.getElementById('time');
+        const formElement = document.getElementById('quizForm');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                formElement.submit();
+            }
+        }, 1000); // 1000 milliseconds = 1 second
+    </script>
+</body>
+</html>
