@@ -7,12 +7,8 @@
 
 /* Body styling */
 body {
+    background: #1a1538;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(rgba(65, 29, 29, 0.2), rgba(169, 162, 162, 0.5)),
-    url(https://img.freepik.com/premium-vector/comic-speech-bubbles-with-text-quiz-night-neon-icon-symbol-sticker-tag-special-offer-label_100456-7641.jpg?w=1060);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,24 +21,34 @@ body {
     background-color: transparent;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px 10px rgba(234, 201, 201, 0.5);
     width: 80%;
     max-width: 600px;
+    background: rgba( 255, 255, 255, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 9px );
+-webkit-backdrop-filter: blur( 9px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
 
 /* Quiz header */
 h1 {
     font-size: 1.5em;
-    color: #0f0a0a;
+    color: #ffffff;
     margin-bottom: 15px;
+    padding: 20px 0 20px 0;
 }
 
 /* Paragraph styling */
 p {
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     color: #f1eded;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Label styling */
@@ -73,6 +79,8 @@ input[type="text"] {
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
+    float: right;
+    
 }
 
 .btn:hover {
@@ -86,7 +94,7 @@ input[type="text"] {
 }
 
 .feedback.correct {
-    color: rgb(6, 249, 6);
+    color: rgb(249, 127, 6);
     text-align: center;
     text-shadow: 0px 10px 5px rgb(16, 12, 12);
     font-style: oblique;
@@ -105,6 +113,8 @@ font-size: 18px;
     color: #f2eeee;
     font-weight: bold;
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 /* Next question link */
 a {
